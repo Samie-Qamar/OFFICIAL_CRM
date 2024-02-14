@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LeaveController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,7 @@ use App\Http\Controllers\DashboardController;
 // });
 
 Route::get('/',[DashboardController::class ,'home']);
+
+
+
+Route::get('/ManageLeave',[LeaveController::class,'index'])->name('Manage.Leave');
