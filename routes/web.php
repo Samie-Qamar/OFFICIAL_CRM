@@ -27,3 +27,4 @@ Route::get('/',[DashboardController::class ,'home']);
 Route::get('/ManageLeave',[LeaveController::class,'index'])->name('Manage.Leave');
 
 Route::view('/allAnnoucemnet','Pages.ManageAnoucement.index');
+Route::post('Create_leave',[LeaveController::class,'create'])->name('create.leave');
