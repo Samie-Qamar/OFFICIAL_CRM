@@ -1,15 +1,11 @@
 @extends('layout.default')
 @section('content')
 
-
-
-
-
 <div class="container mt-4">
 <div class="card">
-  <div class="card-header" style="background-color:white;">
+{{--  <div class="card-header" style="background-color:white;">
     <a href="" class="btn btn-primary">Manage Leaves</a>
-  </div>
+  </div> --}}
 </div>
 </div>
 

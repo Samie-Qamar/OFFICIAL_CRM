@@ -8,9 +8,17 @@ use App\Models\UserLeave;
 
 class LeaveController extends Controller
 {
+    public function index()
+    {
+        $data= UserLeave::get();
+        return view('Pages.ManageLeave.index',compact('data'));
+    }
 
 
-   public function index()
+
+
+
+   public function CreateLeavePage()
    {
     return view('Pages.ManageLeave.create');
    }
@@ -20,7 +28,7 @@ class LeaveController extends Controller
 
     public function  create(leaveStoreRequest $request)
     {
-        dd($request->all());
+       // dd($request->all());
         $request->validated();
         $data=[
             'title'=>$request->title,
@@ -30,9 +38,15 @@ class LeaveController extends Controller
             'remarks'=>$request->remarks,
             'status'=>'pending',
         ];
-        dd($data);
-
         $result=UserLeave::create($data);
+        if($result)
+        {
+            return redirect()->route('manage.all.leave')->with('message','Leaves Added Succesfuly');
+        }
+        else
+        {
+            return redirect()->back()->with('message','Some Eror please Try agian!');
+        }
         
 
 

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserLeave extends Model
 {
     use HasFactory;
+    protected $table='users_leave';
 
     protected $fillable=[
         'title',

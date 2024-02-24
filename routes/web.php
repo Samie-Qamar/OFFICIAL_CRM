@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\HolidayController;
 
 
 /*
@@ -24,7 +25,17 @@ Route::get('/',[DashboardController::class ,'home']);
 
 
 
-Route::get('/ManageLeave',[LeaveController::class,'index'])->name('Manage.Leave');
+/**Manage Leave Module */
 
-Route::view('/allAnnoucemnet','Pages.ManageAnoucement.index');
+
+
+Route::get('Manage_leave',[LeaveController::class,'index'])->name('manage.all.leave');
+Route::get('/createleave',[LeaveController::class,'CreateLeavePage'])->name('create.Leave');
 Route::post('Create_leave',[LeaveController::class,'create'])->name('create.leave');
+
+/** Manage Annoucement Module */
+Route::get('/Manage_holiday',[HolidayController::class,'index'])->name('manage.all.holiday');
+Route::get('createholiday',[HolidayController::class,'CreateHolidayPage'])->name('create.holiday.page');
+Route::post('create_holiday',[HolidayController::class,'store'])->name('create.holiday');
+
+
