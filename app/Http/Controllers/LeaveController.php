@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\leaveStoreRequest;
 use App\Models\UserLeave;
+use Carbon\Carbon;
 
 class LeaveController extends Controller
 {
@@ -28,7 +29,8 @@ class LeaveController extends Controller
 
     public function  create(leaveStoreRequest $request)
     {
-       // dd($request->all());
+       
+        $totalDays = Carbon::parse($request->start_date)->diffInDays(Carbon::parse($request->end_date)) + 1;
         $request->validated();
         $data=[
             'title'=>$request->title,
@@ -37,7 +39,11 @@ class LeaveController extends Controller
             'end_date'=>$request->end_date,
             'remarks'=>$request->remarks,
             'status'=>'pending',
+            'total_days'=>$totalDays,
+
         ];
+       // dd($data);
+
         $result=UserLeave::create($data);
         if($result)
         {
