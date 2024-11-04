@@ -17,10 +17,11 @@
                         </li>
                         
                         <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Icons</span></a>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Admin Managment</span></a>
                             <ul class="collapse">
-                                <li><a href="fontawesome.html">FontAwesome Icons</a></li>
-                                <li><a href="themify.html">Themify Icons</a></li>
+                                <li><a href="fontawesome.html">Roles</a></li>
+                                <li><a href="fontawesome.html">Permissions</a></li>
+                                <li><a href="themify.html">Permission</a></li>
                             </ul>
                         </li>
 
