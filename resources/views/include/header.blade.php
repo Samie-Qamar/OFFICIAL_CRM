@@ -15,7 +15,7 @@
                                 <li><a href="{{ route('manage.all.holiday') }}">Manage Announcements</a></li>
                             </ul>
                         </li>
-                        dddd
+                        
                         <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Icons</span></a>
                             <ul class="collapse">
