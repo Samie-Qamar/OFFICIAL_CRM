@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\RolesController;
 
 
 /*
@@ -22,6 +23,11 @@ use App\Http\Controllers\HolidayController;
 // });
 
 Route::get('/',[DashboardController::class ,'home']);
+
+
+// Admin & User Managemnet //
+Route::get('createRoles',[RolesController::class,'showcreate'])->name('show.create.users.roles');
+Route::post('Rolesave',[RolesController::class,'storeRoles'])->name('Store.Roles');
 
 
 
