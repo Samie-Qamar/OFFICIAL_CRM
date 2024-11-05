@@ -32,10 +32,10 @@
     </form>
 </div>
 
-<div class="container mt-5">
+<div class="page-container mt-5" style="margin-left:100px; margin-top:10px;">
     <div class="card">
         <div class="card-header">
-            <h4>Exsisting Roles</h4>
+            <h4 style>Exsisting Roles</h4>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -59,7 +59,8 @@
                             <td>{{$role? $role->created_at:''}}</td>
                             <td>
                                 <!-- Action buttons (Edit/Delete) can be added here -->
-                                <a href="" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{{ route('edit.roles', ['id' => $role ? $role->id : '']) }}" class="btn btn-warning btn-sm">Edit</a>
+
                                 <form action="" method="POST" style="display:inline;">
                                     
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>

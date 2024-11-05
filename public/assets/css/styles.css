@@ -132,7 +132,7 @@
 }
 
 .menu-inner {
-    overflow-y: scroll;
+    overflow-y: none;
     height: 100%;
 }
 

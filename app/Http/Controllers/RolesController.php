@@ -15,13 +15,9 @@ class RolesController extends Controller
 
     }
 
-
-
-    // Store Roles // 
     public function storeRoles(Request $request)
     {
         $input=$request->all();
-    // dd($input);
         if($input)
         {
             Role::create($input);
@@ -32,6 +28,32 @@ class RolesController extends Controller
             return redirect()->back()->with('message','Some Error Ocur Please Try Again');
         }
         
+    }
+
+
+    // Edit Roles // 
+
+    public function editroles($id)
+    {
+        $getRoleById=Role::where('id',$id)->first();
+        return view('Pages.AdminManagment.editRoles',compact('getRoleById'));
+
+    }
+
+
+    // updateRoles  // 
+    public function updateRoles(Request $request)
+    {
+        $checkRoles=Role::where('id',$request->id)->first();
+        if($checkRoles)
+        {
+            return redirect()->back()->with('message','Record Updated Succesfully');
+        }
+        else
+        {
+            return redirect()->back()->with('message','Record not Updated');
+        }
+
     }
 
 }

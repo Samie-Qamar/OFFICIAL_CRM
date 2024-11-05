@@ -29,6 +29,8 @@ Route::get('/',[DashboardController::class ,'home']);
 Route::get('createRoles',[RolesController::class,'showcreate'])->name('show.create.users.roles');
 Route::post('Rolesave',[RolesController::class,'storeRoles'])->name('Store.Roles');
 
+Route::get('editroles/{id}',[RolesController::class,'editroles'])->name('edit.roles');
+
 
 
 /**Manage Leave Module */
