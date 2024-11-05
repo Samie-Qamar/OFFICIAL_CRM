@@ -20,10 +20,8 @@
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Role Type</label>
                 <select class="form-control" id="inputEmail4" name="guard_name" required>
-                    <option value="Super-Admin">Super-Admin</option>
-                    <option value="HR-Management">HR-Management</option>
-                    <option value="User-Management">User-Management</option>
-                    <option value="Sub-Admin">Sub-Admin</option>
+                    <option value="web">web</option>
+                    
                 </select>
             </div>
 
@@ -37,7 +35,7 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4>Existing Roles</h4>
+            <h4>Exsisting Roles</h4>
         </div>
         <div class="card-body">
             <table class="table table-striped">
