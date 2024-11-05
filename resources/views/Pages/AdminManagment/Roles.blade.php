@@ -49,10 +49,14 @@
                 </thead>
                 <tbody>
                     
+                @if(isset($roles))
+                @foreach($roles as $index => $role)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                          
+                            <td>{{$index +1 }}</td>
+                            <td>{{$role?$role->name:''}}</td>
+                            <td>{{$roles ? $role->guard_name:''}}</td>
+                            <td>{{$role? $role->created_at:''}}</td>
                             <td>
                                 <!-- Action buttons (Edit/Delete) can be added here -->
                                 <a href="" class="btn btn-warning btn-sm">Edit</a>
@@ -61,7 +65,10 @@
                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </td>
+                            
                         </tr>
+                        @endforeach
+                         @endif
                    
                 </tbody>
             </table>

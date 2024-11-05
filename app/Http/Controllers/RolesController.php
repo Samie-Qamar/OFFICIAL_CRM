@@ -10,7 +10,8 @@ class RolesController extends Controller
 
     public function showcreate()
     {
-         return view('Pages.AdminManagment.Roles');
+        $roles=Role::get();
+         return view('Pages.AdminManagment.Roles',compact('roles'));
 
     }
 
@@ -32,4 +33,5 @@ class RolesController extends Controller
         }
         
     }
+
 }
